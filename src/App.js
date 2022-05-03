@@ -14,6 +14,7 @@ function App() {
     <div className="App">
       <h1>Holaa</h1>
       <h2>Chau</h2>
+      <h2>Hoal de nuevo</h2>
       <NavBar/>
       <ItemListContainer saludo="Bienvenidos a su Comercio Favorito"/>
     </div>

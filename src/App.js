@@ -13,6 +13,7 @@ function App() {
   return (
     <div className="App">
       <h1>Holaa</h1>
+      <h2>Chau</h2>
       <NavBar/>
       <ItemListContainer saludo="Bienvenidos a su Comercio Favorito"/>
     </div>

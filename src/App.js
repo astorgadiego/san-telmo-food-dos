@@ -15,6 +15,7 @@ function App() {
       <h1>Holaa</h1>
       <h2>Chau</h2>
       <h2>Hoal de nuevo</h2>
+      <h1>askcnjas</h1>
       <NavBar/>
       <ItemListContainer saludo="Bienvenidos a su Comercio Favorito"/>
     </div>

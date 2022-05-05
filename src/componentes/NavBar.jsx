@@ -10,7 +10,7 @@ const NavBar = () => {
                 ['Semillas', '/projects'],
                 ['Contacto', '/reports'],
           ].map(([title, url]) => (
-                    <a href={url} className="rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900">{title}</a>
+                    <a id='enlace' href={url} className="rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900">{title}</a>
                                 ))                        
         }
         <CartWidget/>

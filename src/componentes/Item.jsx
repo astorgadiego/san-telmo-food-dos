@@ -1,9 +1,9 @@
-function Item({elem}) {
+function Item({art}) {
   return (
     <div style={{border:'solid green 5px', margin:'10px', padding:'5px'}}>
-    <div>{elem.titulo}</div>
-    <div>{elem.precio}</div>
-    <div>{elem.imagenURL}</div>
+          <div>{art.titulo}</div>
+          <div>${art.precio}</div>
+          <img  alt=""></img>
     </div>
   )
 }

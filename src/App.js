@@ -4,19 +4,9 @@ import ItemListContainer from './componentes/ItemListContainer';
 
 
 function App() {
-  {/*}
-    setTimeout(() => {
-      <>
-          <ItemListContainer saludo="Bienvenidos a su Comercio Favorito"/>
-      </>    
-        }, 2000);*/}
   return (
-    <div className="App">
-      <h1>Holaa</h1>
-      <h2>Chau</h2>
-      <h2>Hoal de nuevo</h2>
-      <h1>askcnjas</h1>
-      <NavBar/>
+    <div  className="App">
+      <NavBar />
       <ItemListContainer saludo="Bienvenidos a su Comercio Favorito"/>
     </div>
   );

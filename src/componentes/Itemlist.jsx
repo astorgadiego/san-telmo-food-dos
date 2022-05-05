@@ -1,15 +1,11 @@
-import Datos from "./Datos"
-import Item from "./Item"
+import Item from "./Item";
 
-
-setTimeout(()=>{
-},2000)
-
-function Itemlist() {
+function Itemlist({articuloArray}) {
   return (
-    <ul>
-        {Datos.map(diego=><Item key={diego.id} elem={diego}></Item>)}
-    </ul>
+    <div>
+      {articuloArray.map((diego)=><Item key={diego.id} art={diego}/>)}
+    </div>
+    
   )
 }
 

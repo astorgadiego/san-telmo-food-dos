@@ -25,7 +25,7 @@ function ItemListContainer(props) {
     return (
         <>
             <h1 className="m-20 font-serif">{props.saludo}</h1>
-            <Itemlist  articuloArray={articulodisponible}/>   
+            <Itemlist  articuloArray={articulodisponible}/> 
         </>
     )
 }

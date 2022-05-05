@@ -1,9 +1,9 @@
 function Item({art}) {
   return (
-    <div style={{border:'solid green 5px', margin:'10px', padding:'5px'}}>
+    <div key={art.id} style={{border:'solid green 5px', margin:'10px', padding:'5px'}}>
           <div>{art.titulo}</div>
           <div>${art.precio}</div>
-          <img src={art.imagenURL} alt=""></img>
+          <img className="visible m-4" src={art.imagenURL} alt=""></img>
     </div>
   )
 }

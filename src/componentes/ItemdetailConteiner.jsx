@@ -19,7 +19,8 @@ function ItemdetailConteiner() {
     const getItems=()=>{
         return new Promise ((resolve, reject)=>{
             setTimeout(() => {
-                resolve(Datos.find(p=>p.id==prodId))
+                const prodrequested = Datos.find(p=>p.id==Number( prodId ) )
+                resolve(prodrequested)
             }, 2000);
         })
     }

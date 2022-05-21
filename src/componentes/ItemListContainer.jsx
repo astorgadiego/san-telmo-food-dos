@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react"
 import Itemlist from "./Itemlist"
-//import Datos from "./Datos"
+import Datos from "./Datos"
 import { getAllItems } from '../DataBase/index.jsx'
 import { useParams } from "react-router-dom";
 
 
 
-{/*function ObtenerdatosdeBD(categoriaId) {
+function ObtenerdatosdeBD(categoriaId) {
     return new Promise((resolve, rejected) => {
         setTimeout(() => {
             if (categoriaId=== undefined) {
@@ -17,7 +17,7 @@ import { useParams } from "react-router-dom";
             //resolve(Datos)
         }, 2000);
     })
-}*/}
+}
 
 function ItemListContainer(props) {
     const { categoId }= useParams()
@@ -26,7 +26,7 @@ function ItemListContainer(props) {
 
     useEffect(() => {
         setloading(true)
-        getAllItems(categoId).then((result) => {
+        ObtenerdatosdeBD(categoId).then((result) => {
             console.log("Termino la carga de datos", result)
             setarticulodisponible(result)
 

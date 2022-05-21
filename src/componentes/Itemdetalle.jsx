@@ -15,13 +15,17 @@ function Itemdetalle({prodseleccionado}) {
     console.log("Agregado al carrito: ", prodseleccionado, contando)
 }
 
+  if ( prodseleccionado === undefined ) {
+    return <iframe src="https://giphy.com/embed/swhRkVYLJDrCE" width="100%" height="100%"  allowFullScreen></iframe>
+  }
+
   return (
     <>
       <div>{prodseleccionado.titulo}</div>
       <div><h2>${prodseleccionado.precio}</h2></div>
       <img src={prodseleccionado.imagenURL} alt={prodseleccionado.tipo} />
       { estaencarrito ? 
-          <button>Ir a tu Carrito</button>
+          <Link to='/Carrito'>Ir a tu Carrito</Link>
       :
           <ItemCount agregado={OnAdd} stock={prodseleccionado.stock} initial={1}> </ItemCount>
       }

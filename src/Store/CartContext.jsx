@@ -13,7 +13,7 @@ export function CartContextProvider({children}) {
         const AgregarAlCarrito = ( item, cant)=>{
                 /*const newCarrito= [...carrito];
                 setcarrito( newCarrito. concat (newItem))*/
-                if ( isInCarrito()){  
+                if ( isInCarrito( item.id )){  
                     const newCart =  carrito.map(itemdecarrito =>{ if(itemdecarrito.id === item.id){
                         const copyItem = {...itemdecarrito}
                         copyItem.cant += cant
@@ -37,32 +37,44 @@ export function CartContextProvider({children}) {
                 })
                 setcarrito(filtrarcarrito)
         }
-
+        
+        
+        //POR AHORA ESTA EN MODO MANUAL. 
+        const isInCarrito = ( id )=>{
+            return carrito.some( CartItem => CartItem.id === id)    
+        }
+        
+        
+        const getItemfromCarrito = ( id )=>{
+            return carrito.find( CartItem => CartItem.id === id)
+        }
+        
         const ClearCarrito =()=>{
             setcarrito([])
         }
 
-        //POR AHORA ESTA EN MODO MANUAL. 
-        const isInCarrito = ()=>{
-            return false;
-        }
+    
+        
  
         const Funcioncontexto = ()=>console.log("Contexto Listo!!")    
 
         //NAVBAR
         const CantidadenCarrito = ()=>{
             const cantidad = 0
-            return cantidad
+            //foreach del cart e ir sumando al "total", la cantidad de este item
+            //carrito.foreach( item => cantidad+= la cantidad que tenga el item  ) 
+            return cantidad;
         }
 
         //CART
         const TotalCompra = ()=>{
             const preciototal = 0
+             
             return preciototal
         }
 
     return(
-        <Provider value={ { Funcioncontexto, carrito, AgregarAlCarrito, removeFromCart, ClearCarrito } }>
+        <Provider value={ { Funcioncontexto, TotalCompra ,getItemfromCarrito , carrito, CantidadenCarrito, AgregarAlCarrito, removeFromCart, ClearCarrito } }>
             {children}
         </Provider>
     )

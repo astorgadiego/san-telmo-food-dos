@@ -59,10 +59,10 @@ export function CartContextProvider({children}) {
         const Funcioncontexto = ()=>console.log("Contexto Listo!!")    
 
         //NAVBAR
-        const CantidadenCarrito = ()=>{
+        const CantidadenCarrito = (  )=>{
             const cantidad = 0
-            //foreach del cart e ir sumando al "total", la cantidad de este item
-            //carrito.foreach( item => cantidad+= la cantidad que tenga el item  ) 
+            //foreach del cart e ir sumando al "can", la cantidad de este item
+            //  carrito.foreach( (item) => cantidad= cantidad + item.cant  ) 
             return cantidad;
         }
 

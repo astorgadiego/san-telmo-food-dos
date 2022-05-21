@@ -1,29 +1,35 @@
 import { useEffect,useState } from "react";
 import { useParams } from "react-router-dom";
-import Datos from "./Datos";
+//import Datos from "./Datos";
 import Itemdetalle from "./Itemdetalle";
+import { getItemDetalle as getItems } from '../DataBase/index.jsx'
 
 function ItemdetailConteiner() {
     const {prodId}=useParams()
     const [product, setproduct] = useState(  )
 
     useEffect(() => {  
-        (async () => { 
-            const productData = await getItems()
-            if (productData) {
-             setproduct(productData)
-             }
-            })()
-            }, [prodId])
+                (async () => { 
+                    
+                    const productData = await getItems( prodId )
+                    setTimeout(() => {
 
-    const getItems=()=>{
+                        if (productData) {
+                        setproduct(productData)
+                    } 
+                    }   , 2000); 
+                    }
+                )  ()
+    }, [prodId])
+
+    { /*const getItems=()=>{
         return new Promise ((resolve, reject)=>{
             setTimeout(() => {
                 const prodrequested = Datos.find(p=>p.id==Number( prodId ) )
                 resolve(prodrequested)
             }, 2000);
         })
-    }
+    } */}
 
   return (
       <>

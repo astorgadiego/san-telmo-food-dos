@@ -23,6 +23,30 @@ export async function getAllItems() {
 
   const MiColeccion = collection (firestoreDB,'Productos')
   const ProductosSnapshot = await getDocs(MiColeccion)
-  return ProductosSnapshot.docs.map( doc => doc.data() )
+  return ProductosSnapshot.docs.map( doc => { 
+                return { ... doc.data(), id: doc.id  } 
+        }
+  )
+}
+
+export async function getItemsbyCategory ( categoId ) {
+
+  const MiColeccion = collection ( firestoreDB, 'Productos' )
+  const queryProductos = query ( MiColeccion, where ( "tipo", "==", categoId ) )
+  const ProductosSnapshot = await getDocs(queryProductos)
+
+  return ProductosSnapshot.docs.map( doc => { 
+              return { ... doc.data(), id: doc.id  } 
+        }
+    )
+
+}
+
+export async function getItemDetalle ( id ) {
+  const MiColeccion = collection ( firestoreDB, 'Productos' )
+  const ProductRef = doc ( MiColeccion, id )
+  const ProductosSnapshot = await getDoc ( ProductRef )
   
+  return {  ...ProductosSnapshot.data(),  id: ProductosSnapshot.id  }
+
 }

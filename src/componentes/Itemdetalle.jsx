@@ -9,7 +9,7 @@ function Itemdetalle({prodseleccionado}) {
   const { AgregarAlCarrito } = useCartContext()
 
   function OnAdd( contando ) {
-    console.log(`Agregaste Al Carrito ${contando} Productos.`)
+    
     setestaencarrito(true)
     AgregarAlCarrito( prodseleccionado, contando )
     console.log("Agregado al carrito: ", prodseleccionado, contando)
@@ -21,16 +21,27 @@ function Itemdetalle({prodseleccionado}) {
 
   return (
     <>
-      <div>{prodseleccionado.titulo}</div>
-      <div><h2>${prodseleccionado.precio}</h2></div>
-      <img src={prodseleccionado.imagenURL} alt={prodseleccionado.tipo} />
-      { estaencarrito ? 
-          <Link to='/Carrito'>Ir a tu Carrito</Link>
-      :
-          <ItemCount agregado={OnAdd} stock={prodseleccionado.stock} initial={1}> </ItemCount>
-      }
+      <div className="flex flex-col">
+              <div>
+                  {prodseleccionado.titulo}
+              </div>
+              <div>   
+                  <h2>${prodseleccionado.precio}</h2>
+              </div>
+              <div className="flex self-center">
+                <img width="300" src={prodseleccionado.imagenURL} alt={prodseleccionado.tipo} />
+              </div>
+              
+              { estaencarrito ? 
+                  <Link to='/Carrito'>Ir a tu Carrito</Link>
+              :
+                  <ItemCount agregado={OnAdd} stock={prodseleccionado.stock} initial={1}> </ItemCount>
+              }
+              
+              <div><Link to={`/`}>Volver a Inicio</Link></div>  
       
-      <div><Link to={`/`}>Volver a Inicio</Link></div>  
+      </div>    
+      
     </>
   )
 }

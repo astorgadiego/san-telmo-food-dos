@@ -59,18 +59,27 @@ export function CartContextProvider({children}) {
         const Funcioncontexto = ()=>console.log("Contexto Listo!!")    
 
         //NAVBAR
-        const CantidadenCarrito = (  )=>{
-            const cantidad = 0
-            //foreach del cart e ir sumando al "can", la cantidad de este item
-            //  carrito.foreach( (item) => cantidad= cantidad + item.cant  ) 
-            return cantidad;
+        console.log(carrito);
+        const CantidadenCarrito = ( carrito )=>{
+            let cantidad = 0;
+            if(carrito.length!=0){
+                //cantidad = 5
+                carrito.map( (item) => cantidad= cantidad + item.cant)
+                return cantidad;
+            }
+           
+                //carrito.foreach( (item) => cantidad= cantidad + item.cant)
+            
+            //foreach del cart e ir sumando al "can", la cantidad de este item 
+            
         }
 
         //CART
-        const TotalCompra = ()=>{
-            const preciototal = 0
-             
-            return preciototal
+        const TotalCompra = (total_parcial)=>{
+            //let precio_parcial=0;
+            let preciototal = 0;
+            preciototal = preciototal + total_parcial
+            return preciototal   
         }
 
     return(

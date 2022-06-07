@@ -9,10 +9,12 @@ La página cuenta con un display de productos, donde el comprador puede vizualiz
 
 ## Herramientas
 
--HTML/CSS
--REACTJS
--[TAILWIND] (https://tailwindcss.com/) --FrameWork de CSS utilizado
--
+- HTML/CSS
+- REACTJS
+- [TAILWIND] (https://tailwindcss.com/) --FrameWork de CSS utilizado
+
+###Puedes Ver el sitio online en el siguiente [Enlace]()
+
 
 [Autor del Proyecto: Diego Astorga]
 

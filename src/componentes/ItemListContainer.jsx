@@ -40,6 +40,7 @@ function ItemListContainer(props) {
             <div className=" w-full">
             {loading ? <iframe src="https://giphy.com/embed/swhRkVYLJDrCE" width="100%" height="100%"  allowFullScreen></iframe>:(<Itemlist articuloArray={articulodisponible} /> )}
             </div>
+            
         </div>
         </>
     )

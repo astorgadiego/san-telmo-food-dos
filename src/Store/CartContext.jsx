@@ -74,8 +74,8 @@ export function CartContextProvider({children}) {
             
         }
 
-        //CART
-        const TotalCompra = (total_parcial)=>{
+        //CART- TOTAL DE LA COMPRA
+        const TotalCompra = ( total_parcial )=>{
             //let precio_parcial=0;
             let preciototal = 0;
             preciototal = preciototal + total_parcial

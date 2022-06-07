@@ -6,6 +6,7 @@ import ItemdetailConteiner from './componentes/ItemdetailConteiner';
 import { CartContextProvider } from './Store/CartContext';
 import CartView from './componentes/CartView';
 
+
 function App() {
   return (
     <div  className="App bg-emerald-300">
@@ -20,7 +21,8 @@ function App() {
                 <Route path='/Semilla' element={<ItemListContainer saludo="Nuestras Semillas"/>}/> 
                 <Route path='/Semilla/:prodId' element={<ItemdetailConteiner/>}/> 
                 <Route path='/Contacto' element={<ItemListContainer saludo="Comuniquese con Nosotros"/>}/>
-                <Route path='/Carrito' element={<CartView/>}/>  
+                <Route path='/Carrito' element={<CartView/>}/>
+                  
             </Routes>     
         </BrowserRouter>
       </CartContextProvider>
